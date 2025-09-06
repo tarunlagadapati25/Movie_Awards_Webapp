@@ -1,0 +1,44 @@
+<%- include('../partials/header.ejs')%>
+<link rel="stylesheet" type="text/css" href="/css/connection_styles.css" />
+
+<div class="content">
+    <div class="content-header">
+        <span><b><%= event.title %></b></span>
+        <% if (user == event.name._id) { %>
+        <div class="button-container">
+            <form class="button-form" method="get" action="/events/<%= event.id %>/edit">
+                <button type="submit">Edit</button>
+            </form>
+            <form class="button-form" method="post" action="/events/<%= event.id %>?_method=DELETE">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+      <%} else{%>
+        <div class="buttons">
+            <form class="rsvp">
+                <b>You want to join?:</b>
+                <button class="btn btn-success" id="yes-btn" type="submit" formmethod="post" formaction="/events/<%=event.id%>/rsvp" name="rsvp" value="Yes">Yes</button>
+                <button class="btn btn-danger" id="no-btn" type="submit" formmethod="post" formaction="/events/<%=event.id%>/rsvp" name="rsvp" value="No">No</button>
+                <button class="btn btn-primary" id="maybe-btn" type="submit" formmethod="post" formaction="/events/<%=event.id%>/rsvp" name="rsvp" value="Maybe">Maybe</button>
+            </form>
+        </div>
+    <%}%>
+    </div>
+    <div class="container">
+        <img class="image" src="<%= event.images ? event.images : '/event/ipl.png' %>" alt="Image">
+        <div class="text">
+            <p>Hosted By: <%= event.name.firstName+' '+event.name.lastName %></p>
+            <p>Starts at: <%= event.starttime %></p>
+            <p>Ends at: <%= event.endtime%></p>
+            <p>Location: <%= event.where %></p>
+            <p>Category: <%= event.categorytype %></p>
+            <h4><b>Description:</b></h4><p><%= event.details %></p>
+            <% if(rsvps.length > 0) { %>
+                <caption>How many people are going: <%= rsvps.length %></caption>
+                <% } %>
+        </div>
+        
+    </div>
+  </div>
+
+<%- include('../partials/footer.ejs')%>

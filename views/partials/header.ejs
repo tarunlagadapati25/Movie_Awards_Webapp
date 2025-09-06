@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Awards</title>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="/">
+        <img
+          src="/images/MovieLogo.png"alt="Logo">
+      </a>
+    </div>
+    <div class="nav-links">
+      <% if(!user){%>
+      <a href="/events/bookahall">New Event</a>
+      <a href="/user/login">Login</a>
+      <a href="/user/new">Signup</a>
+      <%}else{%>
+        <a href="/events/bookahall">New Event</a>
+        <% if(username !== 'undefined'){%>
+        <a href="/user/profile"><%= username%>'s Profile</a>
+        <%}else{%>
+          <a href="/user/profile"> Profile</a>
+        <%}%>
+      <a href="/user/logout">LogOut</a>
+      <% }%>
+    </div>
+  </header>
+  <hr class="header-separator"> 
+  <header>
+    <div class="nav-links">
+      <a href="/events">Events</a>
+    </div>
+  </header>
+  <% if (errorMessages.length > 0) { %>
+    <% errorMessages.forEach(error => { %>
+        <div class ="error"><%= error %></div>
+    <% }); %>
+<% } %>
+
+<% if (successMessages.length > 0) { %>
+    <% successMessages.forEach(success => { %>
+        <div class ="success"><%= success %></div>
+    <% }); %>
+<% } %>

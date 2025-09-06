@@ -1,0 +1,158 @@
+ body {
+      font-family: Lato, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+	
+    .header-separator {
+      width: 100%;
+      border-top: 1px solid #ddd;
+      margin: 0 0; 
+    }
+	
+    .logo {
+      margin-left: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      margin-right: 20px;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 10px;
+      padding-right: 10px; 
+      border-right: 1px solid #fff; 
+    }
+
+    .nav-links a:last-child {
+      border-right: none; 
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    .footer {
+      background-color: #333;
+      color: #fff;
+      text-align: left;
+      padding: 10px 10px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between; 
+    }
+    
+	.footer a {
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+    }
+
+
+   .footer i {
+   color: white;
+   text-decoration: none;
+   margin-right: 10px;
+   }
+   
+    .content {
+      padding: 20px;
+      padding-left: 50px; 
+      padding-top: 20px;  
+    }
+
+    .content h4 {
+      background-color: #fff;
+      color: #000;
+      padding: 10px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .content h4 span {
+      margin-right: 200px;
+    }
+    span {
+      margin-right: 140px; 
+    }
+    .content h4 a.btn {
+      background-color: #333;
+      color: #fff;
+      text-decoration: none; 
+      border: none;
+      padding: 5px 10px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+	
+	.content p {
+      margin-left: 20px;
+    }
+
+   .container {
+      display: flex;
+      align-items: center;
+    }
+
+    .image {
+      max-width: 200px; 
+      margin-right: 20px; 
+    }
+
+    .text {
+      flex-grow: 1; 
+    }
+    .content p {
+      margin-left: 20px;
+    }
+    .content-header {
+      display: flex;
+      align-items: center;
+      
+  }
+  
+  .button-container {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+  }
+  
+  .button-form {
+      display: flex;
+      margin-right: 10px;
+  }
+  
+  .button-form button[type="submit"] {
+      padding: 10px 15px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+  }
+  
+  .button-form button[type="submit"]:hover {
+      background-color: #444;
+  }
+  
+  .content h4 span {
+      margin-right: 10px;
+  }
+
+    

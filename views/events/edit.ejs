@@ -1,0 +1,25 @@
+<%- include('../partials/header.ejs')%>
+<link rel="stylesheet" href="/css/newconnection_styles.css">
+<main>
+    <form action="/events/<%=event._id%>?_method=PUT" method="post">
+        <h2 class="form-heading">Edit an Event</h2><br>
+        <label for="name">category Type
+        <input type="text" id="categorytype" name="categorytype" value="<%= event.categorytype%>"><br><br></label>
+        <label for="name">Title:
+        <input type="text" id="title" name="title" value="<%= event.title%>"><br><br></label>
+        <!-- <label for="name">Host Name:
+        <input type="text" id="name" name="name" value="<%= event.name%>"><br><br></label> -->
+        <label for="Details">Details:
+        <textarea id="details" name="details" rows="3" cols="40"><%= event.details%></textarea><br><br></label>
+        <label for="starttime">Start Time:
+        <input type="datetime-local" id="starttime" name="starttime" value="<%= event.starttime%>"><br><br></label>
+        <label for="endtime">End Time:
+        <input type="datetime-local" id="endtime" name="endtime" value="<%= event.endtime%>"><br><br></label>        
+        <label for="where">Where:
+        <input type="text" id="where" name="where" value="<%= event.where%>"><br><br></label>
+       
+        <button type="submit" class="Sbutton">Submit</button>
+    </form>
+</main>
+
+<%- include('../partials/footer.ejs')%>

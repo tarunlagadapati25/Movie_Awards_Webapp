@@ -1,0 +1,17 @@
+<%- include('../partials/header.ejs')%>
+<link rel="stylesheet" href="/css/connections_styles.css">
+
+<div class="content">
+    <% const categorytypes = [...new Set(events.map(event => event.categorytype))]; %>
+    <% categorytypes.forEach(categorytype => { %>
+        <h3><b><%= categorytype %></b></h3>
+        <% events.forEach(event =>{
+            if(event.categorytype === categorytype){%>
+                <p><a href="/events/<%= event.id %>"><em> <%= event.title%></em></a><br></p>
+           <% }
+        })
+    })%>
+  </div>
+
+
+<%- include('../partials/footer.ejs')%>
